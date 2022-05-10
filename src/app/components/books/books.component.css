@@ -1,0 +1,46 @@
+
+table {
+    border-collapse: inherit;
+}
+
+.thead-light th {
+    font-weight: 500;
+    background-color:hsla(300, 6%, 97%,0.677) !important;
+
+}
+.bg-success{
+    background-color:hsla(117, 43%, 55%,0.8) !important; 
+}
+.bg-danger{
+    background-color:hsla(352, 43%, 55%,0.8) !important; 
+}
+table tbody tr td {
+    cursor: pointer;
+    color: white !important;
+    background-color: rgba(67, 67, 67, 0.677);
+}
+/* tr{
+    margin: 50px !important;
+    padding: auto;
+} */
+tr:hover {
+    background-color: hsla(182, 50%, 80%,0.8);
+}
+
+ .active{
+    
+    background-color: rgba(213, 78, 181, 0.899) !important;
+}
+
+.row{
+    color: rgb(0, 0, 0);
+}
+
+.book-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}

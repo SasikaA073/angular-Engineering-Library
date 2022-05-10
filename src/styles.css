@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url("../node_modules/font-awesome/css/font-awesome.css");
+
+body{
+    background-image: url(assets/photo-1507842217343-583bb7270b66.jpg);
+    background-repeat: no-repeat;
+    backface-visibility: 40%;
+    background-size: 100%;
+    
+}
+

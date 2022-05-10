@@ -1,0 +1,62 @@
+<div class="container-fluid main-content">
+    <div class="row">
+        <section [ngClass]="!isAddBooksHidden ? 'col-md-7':'col-md-12'">
+            <!-- col -->
+            <div class="book-header">
+                <!-- Margin top-3px Margin bottom-3px -->
+                <h3>Book List</h3>
+            </div>
+
+            <button *ngIf="isAddBooksHidden" type="button" class="btn btn-outline-primary" (click)="showAddBooks()">Add Book</button>
+            <button *ngIf="!isAddBooksHidden" type="button" class="btn btn-outline-primary" (click)="hideAddBooks()">Close Book</button>
+
+            <table class="table">
+                <thead class="thead-light t-head">
+                    <!--  -->
+                    <tr>
+                        <th scope="col">Book Id</th>
+                        <th scope="col">Book Name</th>
+                        <th scope="col">Authors</th>
+                        <!-- <th scope="col">Edition</th> -->
+                        <th scope="col">Published Year</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Is cheap?</th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Publishers</th>
+                        <th scope="col">Product Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let book of bookList let i = index" (click)="selectRow(i)"
+                        [ngClass]="rowIndex == i ? 'active':''">
+                        <!-- if rowIndex equals to i , then change the class to 'active' class -->
+                        <th scope="row">#bookList.indexOf(book)+1#</th>
+                        <td>#book.bookName | contentLimiter#</td>
+                        <td>#book.bookAuthors#</td>
+                        <td>#book.publishedYear | date| uppercase #</td>
+                        <!-- We have to be careful when chaining pipes in a specific order -->
+                        <!-- <td>#book.edition#</td> -->
+                        <td>#book.price | currency: 'Rs.' #</td>
+                        <td>
+                            <p *ngIf="book.price <= 1000" ngClass="bg-success">Cheap</p>
+                            <p *ngIf="book.price > 1000" ngClass="bg-danger">Expensive</p>
+                        </td>
+                        <td>#book.subject#</td>
+                        <td>#book.publishers#</td>
+                        <td colspan="3">
+                            <button class="button" [disabled]="rowIndex != i "><i class="fa fa-eye icon"></i></button>
+                            <button [disabled]="rowIndex != i " class="button"> <i
+                                    class="fa fa-pencil-square-o icon"></i></button>
+                        </td>
+
+
+                    </tr>
+                </tbody>
+
+            </table>
+        </section>
+        <section class="col-md-5" *ngIf="!isAddBooksHidden">
+            <app-add-book></app-add-book>
+        </section>
+    </div>
+</div>

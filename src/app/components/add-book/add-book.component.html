@@ -1,0 +1,84 @@
+<div class="add-product-section mt-3">
+    <div class="box-head">
+        <h1 class="pr-name">Add a new book</h1>
+    </div>
+    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+
+        <!-- bookName -->
+        <div class="form-group">
+            <label class="form-label">Book Name</label>
+            <input type="text" class="form-control" formControlName="bookName">
+        </div> 
+
+        <!-- bookAuthors -->
+        <div class="form-group">
+            <label class="form-label">Authors</label>
+            <input type="text" class="form-control" formControlName="bookAuthors">
+        </div> 
+
+        <!-- edition -->
+        <div class="form-group">
+            <label class="form-label">edition</label>
+            <input type="text" class="form-control" formControlName="edition">
+        </div> 
+        
+        <!-- publishedYear -->
+        <div class="form-group">
+            <label class="form-label">Published Year(date)</label>
+            <input type="text" class="form-control" formControlName="publishedYear">
+        </div> 
+
+        <!-- price -->
+        <div class="form-group">
+            <label class="form-label">Price</label>
+            <input type="text" class="form-control" formControlName="price">
+        </div> 
+
+        <!-- subject -->
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="form-label">Subject</label>
+                    <select class="form-control" formControlName="category">
+                        <option>Electrical</option>
+                        <option>Mechanical - Dynamics</option>
+                        <option>Mechanical - Statics</option>
+                        <option>Fluid Mechanics</option>
+                        <option>Computer Science</option>
+                        <option>Mathematics</option>
+                        <option>Properties of Material</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <!-- publishers -->
+        <div class="form-group">
+            <label class="form-label">Publishers</label>
+            <input type="text" class="form-control" formControlName="publishers">
+        </div> 
+        
+        
+        
+        
+
+        
+       
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="form-label">Unit Price</label>
+                    <input type="number" class="form-control" formControlName="unitPrice">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Quantity</label>
+                    <input type="number" class="form-control" formControlName="quantity">
+                </div>
+            </div> 
+        </div>
+        <div class="col-12 text-end mt-5">
+            <button type="button" class="btn btn btn-outline-secondary me-2">Cancel</button>
+            <button type="submit" class="btn btn-outline-primary"> Submit </button>
+        </div>
+    </form>
+</div>
